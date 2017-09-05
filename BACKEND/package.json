@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "tsc -p public/angular2/src/",
+    "build:watch": "tsc -p public/angular2/src/ -w",
+    "build:e2e": "tsc -p e2e/",
+    "serve": "lite-server -c=public/angular2/bs-config.json",
+    "serve:e2e": "lite-server -c=public/angular2/bs-config.e2e.json",
+    "prestart": "npm run build",
+    "start": "concurrently \"npm run build:watch\" \"/opt/lampp/bin/php artisan serve\"",
+    "pree2e": "npm run build:e2e",
+    "e2e": "concurrently \"npm run serve:e2e\" \"npm run protractor\" --kill-others --success first",
+    "preprotractor": "webdriver-manager update",
+    "protractor": "protractor public/angular2/protractor.config.js",
+    "pretest": "npm run build",
+    "test": "concurrently \"npm run build:watch\" \"karma start public/angular2/karma.conf.js\"",
+    "pretest:once": "npm run build",
+    "test:once": "karma start public/angular2/karma.conf.js --single-run",
+    "lint": "tslint ./public/angular2/src/**/*.ts -t verbose"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "angular-ui-router": "^1.0.3"
+  }
+}

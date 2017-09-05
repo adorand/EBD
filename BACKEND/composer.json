@@ -1,0 +1,61 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "folklore/graphql": "~1.0",
+        "intervention/image": "^2.3",
+        "laravel/framework": "5.3.*",
+        "laravel/tinker": "~1.0",
+        "webpatser/laravel-uuid": "2.*",
+        "authority-php/authority-laravel": "~2.4.3",
+        "jeremeamia/superclosure":"2.3.*"
+
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.7"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "/opt/lampp/bin/php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "/opt/lampp/bin/php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "/opt/lampp/bin/php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "/opt/lampp/bin/php artisan optimize"
+        ],
+        "start": "php artisan serve --port 8080 --host 0.0.0.0",
+        "migrateI": "php artisan migrate:install",
+        "migrateR": "php artisan migrate:refresh",
+        "migrateRl": "php artisan migrate:rollback",
+        "migrateRs": "php artisan migrate:reset"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
