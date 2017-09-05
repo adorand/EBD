@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aca4f557-91b8-4d9a-aa67-98b2164b2b39" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/082ef990-5e54-11e7-be2c-a769774d80db.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/0fd7b8d0-5e54-11e7-87df-55ed50c4cabd.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/1d371fe0-5ca1-11e7-93c1-9786832f3cdc.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/1d371fe0-5ca1-11e7-93c1-9786832f3cdc.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/1d371fe0-5ca1-11e7-93c1-9786832f3cdc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/1e402e50-5de4-11e7-a5f0-e5489988b5a3.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/23bbb790-5d94-11e7-b58b-0d3d155177ef.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/297d7a90-5e54-11e7-8592-6d13ef82e26c.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/3bba1000-5de4-11e7-91de-b169be5dc08e.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/4190ae80-5de4-11e7-b318-612eb901735d.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/57fc0760-5ca1-11e7-bb7a-bff0ac549b05.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/604c1fb0-5ca1-11e7-a3dd-d9a096bcf960.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/6753fcc0-5df2-11e7-a455-2d8eac523e81.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/7e8ab9c0-5e5e-11e7-89b8-47f4d724e9d0.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/e67f2180-5e57-11e7-aa1d-5d3bd53129d1.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/messages/f4cd6920-5d93-11e7-83ab-23ee9bbf96b4.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1462adc0-5814-11e7-8bc7-493728c41fc3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1462adc0-5814-11e7-8bc7-493728c41fc3_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1462adc0-5814-11e7-8bc7-493728c41fc3_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1462adc0-5814-11e7-8bc7-493728c41fc3_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/16c25be0-5812-11e7-a0af-c7b603c55b43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/16c25be0-5812-11e7-a0af-c7b603c55b43_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/16c25be0-5812-11e7-a0af-c7b603c55b43_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/16c25be0-5812-11e7-a0af-c7b603c55b43_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1788ecb0-5812-11e7-add1-43b63f48a830.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1788ecb0-5812-11e7-add1-43b63f48a830_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1788ecb0-5812-11e7-add1-43b63f48a830_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1788ecb0-5812-11e7-add1-43b63f48a830_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1b432660-5812-11e7-be2f-197035f8052a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1b432660-5812-11e7-be2f-197035f8052a_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1b432660-5812-11e7-be2f-197035f8052a_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1b432660-5812-11e7-be2f-197035f8052a_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1fb316a0-5812-11e7-abc3-b17e98f72d3b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1fb316a0-5812-11e7-abc3-b17e98f72d3b_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1fb316a0-5812-11e7-abc3-b17e98f72d3b_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/1fb316a0-5812-11e7-abc3-b17e98f72d3b_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20474d40-5812-11e7-bc2c-0313f6cec087.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20474d40-5812-11e7-bc2c-0313f6cec087_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20474d40-5812-11e7-bc2c-0313f6cec087_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20474d40-5812-11e7-bc2c-0313f6cec087_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20892ad0-5812-11e7-8055-9d784fc49392.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20892ad0-5812-11e7-8055-9d784fc49392_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20892ad0-5812-11e7-8055-9d784fc49392_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/20892ad0-5812-11e7-8055-9d784fc49392_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/35191780-5812-11e7-b49f-af735dd45461.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/35191780-5812-11e7-b49f-af735dd45461_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/35191780-5812-11e7-b49f-af735dd45461_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/35191780-5812-11e7-b49f-af735dd45461_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/39eaf2f0-5812-11e7-ac4c-f14a8af4b250.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/39eaf2f0-5812-11e7-ac4c-f14a8af4b250_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/39eaf2f0-5812-11e7-ac4c-f14a8af4b250_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/39eaf2f0-5812-11e7-ac4c-f14a8af4b250_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/47252bc0-5dea-11e7-a5ba-8beeb7e94a70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/47252bc0-5dea-11e7-a5ba-8beeb7e94a70_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/47252bc0-5dea-11e7-a5ba-8beeb7e94a70_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/47252bc0-5dea-11e7-a5ba-8beeb7e94a70_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/4e056a70-5814-11e7-9d77-abc4b86789a4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/4e056a70-5814-11e7-9d77-abc4b86789a4_aff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/4e056a70-5814-11e7-9d77-abc4b86789a4_plan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/4e056a70-5814-11e7-9d77-abc4b86789a4_slider.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/7042c350-5804-11e7-8a0a-153e390b732a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/7042c350-5804-11e7-8a0a-153e390b732a_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/7042c350-5804-11e7-8a0a-153e390b732a_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/7042c350-5804-11e7-8a0a-153e390b732a_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/76c7a120-5e51-11e7-8522-75859f9166f6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/76c7a120-5e51-11e7-8522-75859f9166f6_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/76c7a120-5e51-11e7-8522-75859f9166f6_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/76c7a120-5e51-11e7-8522-75859f9166f6_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a1e217a0-5804-11e7-94dd-29203eff2f53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a1e217a0-5804-11e7-94dd-29203eff2f53_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a1e217a0-5804-11e7-94dd-29203eff2f53_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a1e217a0-5804-11e7-94dd-29203eff2f53_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a57fbec0-5813-11e7-8ad2-934e364fc9e2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a57fbec0-5813-11e7-8ad2-934e364fc9e2_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a57fbec0-5813-11e7-8ad2-934e364fc9e2_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/a57fbec0-5813-11e7-8ad2-934e364fc9e2_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ab1c7c40-5e53-11e7-b6f6-ab7737a5490e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ab1c7c40-5e53-11e7-b6f6-ab7737a5490e_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ab1c7c40-5e53-11e7-b6f6-ab7737a5490e_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ab1c7c40-5e53-11e7-b6f6-ab7737a5490e_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/aff389e0-5804-11e7-a4d8-17964c0f3c33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/aff389e0-5804-11e7-a4d8-17964c0f3c33_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/aff389e0-5804-11e7-a4d8-17964c0f3c33_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/aff389e0-5804-11e7-a4d8-17964c0f3c33_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b23a2c40-5e53-11e7-8a8f-279e6af2adb3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b23a2c40-5e53-11e7-8a8f-279e6af2adb3_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b23a2c40-5e53-11e7-8a8f-279e6af2adb3_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b23a2c40-5e53-11e7-8a8f-279e6af2adb3_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b9366230-5826-11e7-9561-753d4c076df4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b9366230-5826-11e7-9561-753d4c076df4_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b9366230-5826-11e7-9561-753d4c076df4_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b9366230-5826-11e7-9561-753d4c076df4_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b99ec450-5e53-11e7-86c1-514ef93d189c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b99ec450-5e53-11e7-86c1-514ef93d189c_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b99ec450-5e53-11e7-86c1-514ef93d189c_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/b99ec450-5e53-11e7-86c1-514ef93d189c_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bca6ba40-5812-11e7-80f0-915c993d2339.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bca6ba40-5812-11e7-80f0-915c993d2339_aff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bca6ba40-5812-11e7-80f0-915c993d2339_plan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bca6ba40-5812-11e7-80f0-915c993d2339_slider.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bd553060-5813-11e7-b759-67e051856fc0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bd553060-5813-11e7-b759-67e051856fc0_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bd553060-5813-11e7-b759-67e051856fc0_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/bd553060-5813-11e7-b759-67e051856fc0_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c1056d80-5804-11e7-a193-278279079150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c1056d80-5804-11e7-a193-278279079150_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c1056d80-5804-11e7-a193-278279079150_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c1056d80-5804-11e7-a193-278279079150_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c7d026e0-5811-11e7-b25a-bd6165f09f20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c7d026e0-5811-11e7-b25a-bd6165f09f20_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c7d026e0-5811-11e7-b25a-bd6165f09f20_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c7d026e0-5811-11e7-b25a-bd6165f09f20_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c902ee70-5813-11e7-8603-01546da4e2c9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c902ee70-5813-11e7-8603-01546da4e2c9_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c902ee70-5813-11e7-8603-01546da4e2c9_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/c902ee70-5813-11e7-8603-01546da4e2c9_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/da779b80-5813-11e7-aa79-e5002ed1832f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/da779b80-5813-11e7-aa79-e5002ed1832f_aff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/da779b80-5813-11e7-aa79-e5002ed1832f_plan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/da779b80-5813-11e7-aa79-e5002ed1832f_slider.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/e060ff30-5804-11e7-af9a-15771f744273.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/e060ff30-5804-11e7-af9a-15771f744273_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/e060ff30-5804-11e7-af9a-15771f744273_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/e060ff30-5804-11e7-af9a-15771f744273_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ee0b7670-5813-11e7-bde1-415e2fcb4261.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ee0b7670-5813-11e7-bde1-415e2fcb4261_aff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ee0b7670-5813-11e7-bde1-415e2fcb4261_plan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/ee0b7670-5813-11e7-bde1-415e2fcb4261_slider.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f104d560-5811-11e7-b9f0-f5d13a420c90.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f104d560-5811-11e7-b9f0-f5d13a420c90_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f104d560-5811-11e7-b9f0-f5d13a420c90_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f104d560-5811-11e7-b9f0-f5d13a420c90_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f63bd6d0-5813-11e7-aa66-cd9419a0f049.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f63bd6d0-5813-11e7-aa66-cd9419a0f049_aff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f63bd6d0-5813-11e7-aa66-cd9419a0f049_plan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/f63bd6d0-5813-11e7-aa66-cd9419a0f049_slider.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fbb928c0-5812-11e7-b26f-dba594d13365.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fbb928c0-5812-11e7-b26f-dba594d13365_aff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fbb928c0-5812-11e7-b26f-dba594d13365_plan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fbb928c0-5812-11e7-b26f-dba594d13365_slider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fcd51ef0-5813-11e7-a21e-39dd26347cdd.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fcd51ef0-5813-11e7-a21e-39dd26347cdd_aff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fcd51ef0-5813-11e7-a21e-39dd26347cdd_plan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BACKEND/public/images/pensees/fcd51ef0-5813-11e7-a21e-39dd26347cdd_slider.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/MessagesQuery.php" afterPath="$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/MessagesQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/PenseesQuery.php" afterPath="$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/PenseesQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/app/Http/Controllers/deleteController.php" afterPath="$PROJECT_DIR$/BACKEND/app/Http/Controllers/deleteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/app/Http/Controllers/saveController.php" afterPath="$PROJECT_DIR$/BACKEND/app/Http/Controllers/saveController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/public/js/angular/BACKOFFICE.js" afterPath="$PROJECT_DIR$/BACKEND/public/js/angular/BACKOFFICE.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/public/messages.blade.php" afterPath="$PROJECT_DIR$/BACKEND/public/messages.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BACKEND/resources/views/accueil.blade.php" afterPath="$PROJECT_DIR$/BACKEND/resources/views/accueil.blade.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="database.sqlite" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="database.sqlite" type="e3449647:DbNodeDescriptor" />
+        <item name="main" type="e3449647:DbNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="accueil.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/resources/views/accueil.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="931" column="44" lean-forward="false" selection-start-line="931" selection-start-column="44" selection-end-line="931" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BACKOFFICE.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/public/js/angular/BACKOFFICE.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="897" column="25" lean-forward="false" selection-start-line="897" selection-start-column="25" selection-end-line="897" selection-end-column="25" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1504586086582" expanded="true" signature="16739:16785" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="17497:17543" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="18931:18977" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="19076:19120" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="20581:20606" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="20697:20741" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="41832:41878" ph="..." />
+                <marker date="1504586086582" expanded="true" signature="41968:42012" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/app/Http/Controllers/deleteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saveController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BACKEND/app/Http/Controllers/saveController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-75">
+              <caret line="143" column="13" lean-forward="false" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/public/messages.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-450">
+              <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagesQuery.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/MessagesQuery.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PenseeSerializers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Serializers/PenseeSerializers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="26" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageSerializer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Serializers/MessageSerializer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="24" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>addSlider</find>
+      <find>addEle</find>
+      <find>slider</find>
+      <find>deleteE</find>
+      <find>pensees</find>
+      <find>addMess</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2a2f9f11-433f-4b8a-bb28-1b5778d44e7d/console_1.sql" />
+        <option value="$PROJECT_DIR$/BACKEND/public/accueil.blade.php" />
+        <option value="$PROJECT_DIR$/BACKEND/public/messages.blade.php" />
+        <option value="$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/PenseesQuery.php" />
+        <option value="$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/MessagesQuery.php" />
+        <option value="$PROJECT_DIR$/BACKEND/public/js/angular/BACKOFFICE.js" />
+        <option value="$PROJECT_DIR$/BACKEND/app/Http/Controllers/deleteController.php" />
+        <option value="$PROJECT_DIR$/BACKEND/resources/views/accueil.blade.php" />
+        <option value="$PROJECT_DIR$/BACKEND/app/Http/Controllers/saveController.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/BACKEND/public/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1600" />
+    <option name="height" value="873" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GraphQL" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GraphQL" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Queries" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GraphQL" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Serializers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GraphQL" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Types" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="angular" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EBD" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BACKEND" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aca4f557-91b8-4d9a-aa67-98b2164b2b39" name="Default" comment="" />
+      <created>1504582681388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504582681388</updated>
+      <workItem from="1504582682774" duration="4449000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4449000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="0" width="1602" height="873" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977304" sideWeight="0.502574" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21364221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977304" sideWeight="0.497426" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2a2f9f11-433f-4b8a-bb28-1b5778d44e7d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2a2f9f11-433f-4b8a-bb28-1b5778d44e7d/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/SlidersQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-642">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/GaleriesQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/public/pensees.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/public/accueil.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="147" lean-forward="false" selection-start-line="4" selection-start-column="141" selection-end-line="4" selection-end-column="147" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Serializers/MessageSerializer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Serializers/PenseeSerializers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="26" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/PenseesQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/GraphQL/Queries/MessagesQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/public/js/angular/BACKOFFICE.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="897" column="25" lean-forward="false" selection-start-line="897" selection-start-column="25" selection-end-line="897" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1504586086582" expanded="true" signature="16739:16785" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="17497:17543" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="18931:18977" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="19076:19120" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="20581:20606" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="20697:20741" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="41832:41878" ph="..." />
+            <marker date="1504586086582" expanded="true" signature="41968:42012" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/Http/Controllers/deleteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/config/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/public/messages.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/resources/views/accueil.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="931" column="44" lean-forward="false" selection-start-line="931" selection-start-column="44" selection-end-line="931" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BACKEND/app/Http/Controllers/saveController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="143" column="13" lean-forward="false" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

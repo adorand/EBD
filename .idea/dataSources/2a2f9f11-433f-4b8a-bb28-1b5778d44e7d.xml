@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="database.sqlite">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="activites"/>
+    <table id="7" parent="2" name="actualites"/>
+    <table id="8" parent="2" name="auteurs"/>
+    <table id="9" parent="2" name="evenements"/>
+    <table id="10" parent="2" name="galeries"/>
+    <table id="11" parent="2" name="messages"/>
+    <table id="12" parent="2" name="migrations"/>
+    <table id="13" parent="2" name="password_resets"/>
+    <table id="14" parent="2" name="pensees"/>
+    <table id="15" parent="2" name="permissions"/>
+    <table id="16" parent="2" name="role_user"/>
+    <table id="17" parent="2" name="roles"/>
+    <table id="18" parent="2" name="sliders"/>
+    <table id="19" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="20" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="21" parent="2" name="users"/>
+    <table id="22" parent="2" name="utilisateurs"/>
+    <column id="23" parent="6" name="id">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="6" name="titre">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="6" name="texte">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="6" name="fichier">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="6" name="dateact">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="6" name="categorie">
+      <Position>5</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="6" name="created_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="30" parent="6" name="updated_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="31" parent="6" name="sqlite_autoindex_activites_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_activites_1</UnderlyingIndexName>
+    </key>
+    <column id="33" parent="7" name="id">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="7" name="titre">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="7" name="texte">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="7" name="fichier">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="7" name="dateact">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="7" name="categorie">
+      <Position>5</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="7" name="created_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="40" parent="7" name="updated_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="41" parent="7" name="sqlite_autoindex_actualites_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_actualites_1</UnderlyingIndexName>
+    </key>
+    <column id="43" parent="8" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="8" name="nom">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="8" name="created_at">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="46" parent="8" name="updated_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="47" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="9" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="9" name="titre">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="9" name="description">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="9" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="52" parent="9" name="updated_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="53" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="54" parent="10" name="id">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="10" name="texte">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="10" name="fichier">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="10" name="evenement">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="10" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="59" parent="10" name="updated_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="60" parent="10" name="sqlite_autoindex_galeries_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_galeries_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="62" parent="10">
+      <ColNames>evenement</ColNames>
+      <RefTableName>evenements</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="63" parent="11" name="id">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="11" name="theme">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="11" name="auteur">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="11" name="fichier">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="11" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="68" parent="11" name="updated_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="69" parent="11" name="sqlite_autoindex_messages_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_messages_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="71" parent="11">
+      <ColNames>auteur</ColNames>
+      <RefTableName>auteurs</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="72" parent="12" name="migration">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="12" name="batch">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="13" name="email">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="13" name="token">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="13" name="created_at">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="77" parent="13" name="password_resets_email_index">
+      <ColNames>email</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="78" parent="13" name="password_resets_token_index">
+      <ColNames>token</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <column id="79" parent="14" name="id">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="14" name="datepassage">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="14" name="theme">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="14" name="auteur">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="14" name="texte">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="14" name="image">
+      <Position>5</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="14" name="created_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="86" parent="14" name="updated_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="87" parent="14" name="sqlite_autoindex_pensees_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="88" parent="14">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_pensees_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="89" parent="14">
+      <ColNames>auteur</ColNames>
+      <RefTableName>auteurs</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="90" parent="15" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="91" parent="15" name="type">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="15" name="action">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="15" name="resource">
+      <Position>3</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="15" name="user_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="15" name="created_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="96" parent="15" name="updated_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="97" parent="15" name="permissions_user_id_index">
+      <ColNames>user_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="98" parent="15">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="99" parent="16" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="100" parent="16" name="role_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="16" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="16" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="103" parent="16" name="updated_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="104" parent="16">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="105" parent="17" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="106" parent="17" name="name">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="17" name="created_at">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="108" parent="17" name="updated_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="109" parent="17">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="110" parent="18" name="id">
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="18" name="nompage">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="18" name="image">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="113" parent="18" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="114" parent="18" name="updated_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="115" parent="18" name="sqlite_autoindex_sliders_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="116" parent="18">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_sliders_1</UnderlyingIndexName>
+    </key>
+    <column id="117" parent="19" name="type">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="118" parent="19" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="119" parent="19" name="tbl_name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="120" parent="19" name="rootpage">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="121" parent="19" name="sql">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="122" parent="20" name="name"/>
+    <column id="123" parent="20" name="seq">
+      <Position>1</Position>
+    </column>
+    <column id="124" parent="21" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="125" parent="21" name="name">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="126" parent="21" name="email">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="21" name="password">
+      <Position>3</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="128" parent="21" name="remember_token">
+      <Position>4</Position>
+      <DataType>varchar|0</DataType>
+    </column>
+    <column id="129" parent="21" name="created_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="130" parent="21" name="updated_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="131" parent="21" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="132" parent="21">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="133" parent="22" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="134" parent="22" name="nomcomplet">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="22" name="login">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="22" name="password">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="137" parent="22" name="phone">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="138" parent="22" name="droits">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="22" name="photo">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="22" name="created_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="141" parent="22" name="updated_at">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="142" parent="22">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

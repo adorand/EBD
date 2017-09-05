@@ -154,7 +154,11 @@ class saveController extends Controller
             $fichier_tmp=$_FILES['fichier']['tmp_name'];
             $ext=explode('.',$fichier);
             $rename=config('view.uploads')[4]."/".$message->id.".".end($ext);
-            move_uploaded_file($fichier_tmp,$rename);
+            if(move_uploaded_file($fichier_tmp,$rename))
+                echo "bon";
+            else
+                echo "mabé";
+
             $message->fichier=$rename;
         }
         $message->save();

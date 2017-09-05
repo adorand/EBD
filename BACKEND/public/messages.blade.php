@@ -6,24 +6,18 @@
                 <header class=" bg-templateblue header panel b-b clearfix on animated fadeInDown" style="border-radius: 0px ;">
                     <div class="row m-t-sm">
                         <div class="col-sm-8 m-b-xs">
-                            <a class="btn btn-sm bg-white active" ng-click="showView('Auteur')">
-                                <i class="fa fa-caret-right text-black text-active fa-lg"></i>
-                                <i class="fa fa-caret-left text-black text fa-lg"></i>
+                            <a class="btn btn-sm bg-white" ng-click="showView('Auteur')">
+                                <i class="fa fa-caret-right text-black text fa-lg"></i>
+                                <i class="fa fa-caret-left text-black text-active fa-lg"></i>
                             </a>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm bg-template" ng-click="trierElement('Messages','auteur','',$event)" data-toggle="tooltip" data-placement="bottom" data-title="Actualiser"><i class="fa fa-refresh"></i></button>
+                                <button type="button" class="btn btn-sm bg-template" ng-click="trierElement('Messages','auteur','',$event)" data-toggle="tooltip" data-placement="bottom" data-title="Actualiser">
+                                    <i class="fa fa-refresh text-white"></i>
+                                </button>
                                 <button type="button" class="btn btn-sm bg-white" ng-click="actionGroupee('Remove')" data-toggle="tooltip" data-placement="bottom" data-title="Supprimer"><i class="fa fa-trash-o"></i></button>
-                                <button type="button" class="btn btn-sm bg-template" title="Action groupée" data-toggle="dropdown"><i class="fa fa-filter"></i> <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action 1</a></li>
-                                    <li><a href="#">Action 2</a></li>
-                                    <li><a href="#">Action 3</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Tout supprimer</a></li>
-                                </ul>
                             </div>
-                            <a class="btn btn-sm bg-white" ng-click="showModalAdd('Message')">
-                                <i class="fa fa-plus"></i>
+                            <a class="btn btn-sm bg-template" ng-click="showModalAdd('Message')">
+                                <i class="fa fa-plus text-white"></i>
                             </a>
                         </div>
                         <div class="col-sm-4 m-b-xs">

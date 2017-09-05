@@ -149,7 +149,6 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
         }
         else if(current.templateUrl.toLocaleLowerCase().indexOf('pensees')!=-1)
         {
-
             $.each(listofrequests[2],function (element, listeattributs)
             {
                 Init.getElement(element, listeattributs).then(function (data)
@@ -624,7 +623,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             (
                 {
                     url:pathapp+'addElement/'+type,
-                    type:'GET',
+                    type:'POST',
                     contentType:false,
                     processData:false,
                     DataType:'json',
@@ -856,6 +855,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
     //Delete element in scope
     $scope.deleteElement=function (id,type,position="")
     {
+        alert(type);
         id=type.match('Evenement') ? JSON.parse(id).id : id;
         var msg='Confirmer cette suppression ???';
 
@@ -895,7 +895,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
         {
             $.get
             (
-                pathapp+'/deleteElement/'+type,
+                pathapp+'deleteElement/'+type,
                 {
                     id:id,
                 },
@@ -903,71 +903,70 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
                 {
                     if(back.match('1'))
                     {
+                        if(type.match('Auteur'))
+                        {
+                            $route.reload();
 
-                        // if(type.match('Auteur'))
-                        // {
-                        //     $route.reload();
-                        //
-                        //     // var deferred=$q.defer();
-                        //     // $.each($scope.auteurs,function (key,value)
-                        //     // {
-                        //     //     if(value.id==id)
-                        //     //     {
-                        //     //         if($scope.linknav.match('pensees'))
-                        //     //         {
-                        //     //             for(var i=0;i<$scope.pensees.length;i++)
-                        //     //             {
-                        //     //                 ($scope.pensees[i].auteur[0].id==value.id) ? ( $scope.pensees.splice(i,1),  i-- ) : '' ;
-                        //     //             }
-                        //     //         }
-                        //     //         else
-                        //     //         {
-                        //     //             for(var i=0;i<$scope.messages.length;i++)
-                        //     //             {
-                        //     //                 ($scope.messages[i].auteur[0].id==value.id) ? ( $scope.messages.splice(i,1),  i-- ) : '' ;
-                        //     //             }
-                        //     //         }
-                        //     //         return false;
-                        //     //     }
-                        //     // });
-                        //     // deferred.resolve($scope.auteurs.splice(position,1));
-                        //     // deferred.promise;
-                        // } else (type.match('Slider')) ?
-                        //     $scope.sliders.splice(position,1)
-                        // : (type.match('Pensee')) ?
-                        // (
-                        //     $scope.pensees.splice(position,1)
-                        // )
-                        // : (type.match('Message')) ?
-                        //     $scope.messages.splice(position,1)
-                        // : (type.match('Evenement')) ?
-                        // (
-                        //     $.each($scope.evenements,function (key,value) {
-                        //         if(value.id==id)
-                        //         {
-                        //              for(var i=0;i<$scope.galeries.length;i++)
-                        //              {
-                        //                 ($scope.galeries[i].evenement[0].id==value.id) ? ( $scope.galeries.splice(i,1),  i-- ) : '' ;
-                        //              }
-                        //             $scope.evenements.splice(key,1);
-                        //             $('#TriGalerieById').val("");
-                        //             return false;
-                        //         }
-                        //     })
-                        // )
-                        // : (type.match('Galerie')) ?
-                        //     $scope.galeries.splice(position,1)
-                        // : (type.match('Tablette')) ?
-                        // (
-                        //     $.each($scope.infosrestaurants,function(key,value)
-                        //     {
-                        //         angular.forEach($scope.infosrestaurants[key].tablettes,function (value1,key1)
-                        //         {
-                        //             (value1.id==id) ?  $scope.infosrestaurants[key].tablettes.splice(position,1) : '' ;
-                        //         });
-                        //     })
-                        // ): (type.match('Utilisateur')) ?
-                        //     $scope.utilisateurs.splice(position,1): '';
+                            // var deferred=$q.defer();
+                            // $.each($scope.auteurs,function (key,value)
+                            // {
+                            //     if(value.id==id)
+                            //     {
+                            //         if($scope.linknav.match('pensees'))
+                            //         {
+                            //             for(var i=0;i<$scope.pensees.length;i++)
+                            //             {
+                            //                 ($scope.pensees[i].auteur[0].id==value.id) ? ( $scope.pensees.splice(i,1),  i-- ) : '' ;
+                            //             }
+                            //         }
+                            //         else
+                            //         {
+                            //             for(var i=0;i<$scope.messages.length;i++)
+                            //             {
+                            //                 ($scope.messages[i].auteur[0].id==value.id) ? ( $scope.messages.splice(i,1),  i-- ) : '' ;
+                            //             }
+                            //         }
+                            //         return false;
+                            //     }
+                            // });
+                            // deferred.resolve($scope.auteurs.splice(position,1));
+                            // deferred.promise;
+                        } else (type.match('Slider')) ?
+                            $scope.sliders.splice(position,1)
+                        : (type.match('Pensee')) ?
+                        (
+                            $scope.pensees.splice(position,1)
+                        )
+                        : (type.match('Message')) ?
+                            $scope.messages.splice(position,1)
+                        : (type.match('Evenement')) ?
+                        (
+                            $.each($scope.evenements,function (key,value) {
+                                if(value.id==id)
+                                {
+                                     for(var i=0;i<$scope.galeries.length;i++)
+                                     {
+                                        ($scope.galeries[i].evenement[0].id==value.id) ? ( $scope.galeries.splice(i,1),  i-- ) : '' ;
+                                     }
+                                    $scope.evenements.splice(key,1);
+                                    $('#TriGalerieById').val("");
+                                    return false;
+                                }
+                            })
+                        )
+                        : (type.match('Galerie')) ?
+                            $scope.galeries.splice(position,1)
+                        : (type.match('Tablette')) ?
+                        (
+                            $.each($scope.infosrestaurants,function(key,value)
+                            {
+                                angular.forEach($scope.infosrestaurants[key].tablettes,function (value1,key1)
+                                {
+                                    (value1.id==id) ?  $scope.infosrestaurants[key].tablettes.splice(position,1) : '' ;
+                                });
+                            })
+                        ): (type.match('Utilisateur')) ?
+                            $scope.utilisateurs.splice(position,1): '';
 
                         toastr.success("Suppression effectuée");
                         (type.match('Message')) ? '' : $route.reload();

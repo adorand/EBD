@@ -37,23 +37,27 @@ class PenseesQuery extends Query
         ];
     }
 
-    public function resolve($root, array $args = []):Collection
+    public function resolve($root, array $args = [])
     {
 
         $query=Pensee::with('group');
-        return PenseeSerializers::collection($query->get());
-        /*return $query->get()->map(function(Pensee $pensee)
+        // return PenseeSerializers::collection($query->get());
+        // Si on ajoute ça, il faut ajouter devant la fonction :collection
+        return $query->get()->map(function(Pensee $pensee)
         {
             return [
                 'id' => $pensee->id,
                 'theme' => $pensee->theme,
-                'auteur' =>[ $pensee->hasauteur
-                ],
-                'imageslider' => $pensee->imageslider,
-                'imageplan' => $pensee->imageplan,
-                'imageaff' => $pensee->imageaff,
+                'texte' => $pensee->texte,
+                'auteur' => [ $pensee->hasauteur ],
+                'image' => $pensee->image,
+                'imageslider' => $pensee->image,
+                'imageplan' => $pensee->image,
+                'imageaff' => $pensee->image,
+                'created_at' => $pensee->created_at,
+                'updated_at' => $pensee->updated_at
             ];
-        })->toArray();*/
+        })->toArray();
     }
 
 

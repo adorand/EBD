@@ -35,11 +35,21 @@ class MessagesQuery extends Query
         ];
     }
 
-    public function resolve($root, array $args = []):Collection
+    public function resolve($root, array $args = [])
     {
 
         $query=Message::with('group');
-        return MessageSerializer::collection($query->get());
+        return $query->get()->map(function(Message $message)
+        {
+            return [
+                'id' => $message->id,
+                'theme' => $message->theme,
+                'auteur' => [ $message->hasauteur ],
+                'fichier' => $message->fichier,
+                'created_at' => $message->created_at,
+                'update_at' => $message->created_at
+            ];
+        })->toArray();
     }
 
 

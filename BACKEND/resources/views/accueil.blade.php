@@ -720,7 +720,7 @@
                     </div>
                     <div class="modal-body wrapper-lg">
                         <div class="row">
-                            <form id="Form_addSlider" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8"  action="{{url('/addElement/Slider')}}">
+                            <form id="Form_addSlider" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Slider')">
                                 <div class="col-sm-6">
                                     <input type="hidden" id="id_slider" name="id_slider" value="">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -730,7 +730,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Image Slider</label>
-                                        <input type="file" accept="image/*" id="imgslider" name="imgslider" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal"  required>
+                                        <input type="file" accept="image/*" id="imgslider" name="imgslider" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("slider")' required>
                                     </div>
                                 </div>
 
@@ -911,7 +911,7 @@
                     </div>
                     <div class="modal-body wrapper-lg">
                         <div class="row">
-                            <form id="Form_addMessage" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Message')">
+                            <form id="Form_addMessage" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" action="{{url('/addElement/Message')}}">
                                 <div class="col-sm-12">
                                     <input type="hidden" id="id_message" name="id_message" value="">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -11,6 +11,7 @@ use App\Slider;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Input;
+use Mockery\Exception;
 
 class deleteController extends Controller
 {
@@ -39,8 +40,12 @@ class deleteController extends Controller
     {
         $slider=Slider::find(Input::get('id'));
         $ext=explode('.',$slider->image);
-        unlink(public_path($ext[0].'_rz.'.end($ext)));
-        unlink(public_path($slider->image));
+        try
+        {
+            unlink(public_path($ext[0].'_rz.'.end($ext)));
+            unlink(public_path($slider->image));
+        }
+        catch(\Exception $e) { }
         return Slider::destroy(Input::get('id'));
     }
 
@@ -53,17 +58,25 @@ class deleteController extends Controller
     {
         $pensee=Pensee::find(Input::get('id'));
         $ext=explode('.',$pensee->image);
-        unlink(public_path($ext[0].'_aff.'.end($ext)));
-        unlink(public_path($ext[0].'_plan.'.end($ext)));
-        unlink(public_path($ext[0].'_slider.'.end($ext)));
-        unlink(public_path($pensee->image));
+        try
+        {
+            unlink(public_path($ext[0].'_aff.'.end($ext)));
+            unlink(public_path($ext[0].'_plan.'.end($ext)));
+            unlink(public_path($ext[0].'_slider.'.end($ext)));
+            unlink(public_path($pensee->image));
+        }
+        catch (\Exception $e) { }
         return Pensee::destroy(Input::get('id'));
     }
 
     function deleteMessage()
     {
         $message=Message::find(Input::get('id'));
-        unlink(public_path($message->fichier));
+        try
+        {
+            unlink(public_path($message->fichier));
+        }
+        catch (\Exception $e) { }
         return Message::destroy(Input::get('id'));
     }
 
@@ -75,7 +88,11 @@ class deleteController extends Controller
     function deleteGalerie()
     {
         $galerie=Galerie::find(Input::get('id'));
-        unlink(public_path($galerie->fichier));
+        try
+        {
+            unlink(public_path($galerie->fichier));
+        }
+        catch (\Exception $e) { }
         return Galerie::destroy(Input::get('id'));
     }
 }
