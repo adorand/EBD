@@ -1,0 +1,123 @@
+
+/* ==========================================================================
+   3. Background Slider
+========================================================================== */
+/* 3.1 image
+---------------------------------------------------------------------------*/
+div.backstretch img {
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 30s linear;
+       -moz-animation: imageAnimation 30s linear;
+        -ms-animation: imageAnimation 30s linear;
+         -o-animation: imageAnimation 30s linear;
+            animation: imageAnimation 30s linear;
+}
+
+/* 3.2 Overlayer
+---------------------------------------------------------------------------*/
+.backstretch-overlayer {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    overflow: hidden;
+    background: transparent url(../images/patterns/overlay-pattern.png) repeat;
+}
+
+/* 3.3 list
+---------------------------------------------------------------------------*/
+.flexslider.home-slider {
+    background: none;
+
+    -webkit-border: none;
+       -moz-border: none;
+         -o-border: none;
+            border: none;
+
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+         -o-box-shadow: none;
+            box-shadow: none;
+}
+.home-slider ul.slides li { height: 550px; text-align: center; }
+
+/* 3.4 Typography
+---------------------------------------------------------------------------*/
+.home-slider ul.slides h1,
+.home-slider ul.slides h3 {
+    margin: 0;
+    width: auto;
+    color: #ffffff;
+    line-height: 1;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 9px 10px 16px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.home-slider ul.slides h3 {
+    font-size: 30px;
+    padding: 10px 10px 15px 10px;
+}
+
+/* 3.5 Captions
+---------------------------------------------------------------------------*/
+.caption-animation { position: relative; }
+.flex-caption {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+}
+.caption-1,
+.caption-2,
+.caption-3 {
+    left: 0;
+    top: 155px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+.caption-2 { top: 250px; }
+.caption-3  {
+    top: 335px;
+    height: 60px;
+}
+
+/* 4.6 Anchor
+---------------------------------------------------------------------------*/
+.caption-3 a {
+    width: 60px;
+    height: 60px;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+         -o-border-radius: 50%;
+            border-radius: 50%;
+}
+.caption-3 a:hover { background-color: rgba(51, 153, 255, 0.6); }
+
+/* 3.7 Direction Nav
+---------------------------------------------------------------------------*/
+.home-slider .flex-control-nav {
+    z-index: 3;
+    bottom: 40px;
+    height: 11px;
+}
+.home-slider .flex-control-paging li a { background-color: rgba(0, 0, 0, 0.7); }
+.home-slider .flex-control-paging li a.flex-active,
+.home-slider .flex-control-paging li a:hover { background-color: rgba(51, 153, 255, 0.8); }

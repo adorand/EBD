@@ -1,0 +1,389 @@
+
+/* ==========================================================================
+   4. Menu
+========================================================================== */
+/* 4.1 Main Menu
+========================================================================== */
+/* 4.1.1 Wrapper
+---------------------------------------------------------------------------*/
+.gn-menu-main {
+    margin: 0;
+    padding: 0;
+    z-index: 7000;
+    list-style: none;
+    line-height: 50px;
+    text-transform: none;
+
+    background-repeat: repeat;
+    background-position: center top;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    -webkit-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+       -moz-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+         -o-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+            box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+
+    background-image: none, -webkit-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, -moz-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, -ms-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, -o-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, linear-gradient(360deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+}
+.gn-menu-main {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+}
+.gn-menu-main:before {
+    left: 0;
+    top: 100%;
+    content: '';
+    width: 100%;
+    height: 26px;
+    z-index: 6998;
+    position: absolute;
+    background: url(../images/shadow.png) no-repeat center top;
+}
+.gn-menu-main:after {
+        display: table;
+        clear: both;
+        content: "";
+}
+
+/* 4.1.2 list
+---------------------------------------------------------------------------*/
+.gn-menu-main ul {
+    margin: 0;
+    padding: 0;
+    z-index: 7000;
+    list-style: none;
+    line-height: 50px;
+    text-transform: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 4.1.3 items
+---------------------------------------------------------------------------*/
+.gn-menu-main > li {
+    float: left;
+    height: 50px;
+    display: block;
+    text-align: center;
+
+    -webkit-border-right: 1px solid #e4e4e4;
+       -moz-border-right: 1px solid #e4e4e4;
+         -o-border-right: 1px solid #e4e4e4;
+            border-right: 1px solid #e4e4e4;
+}
+.gn-menu-main li.gn-trigger {
+    width: 50px;
+    position: relative;
+
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+
+/* 4.1.4 Anchor
+---------------------------------------------------------------------------*/
+.gn-menu-main a {
+    height: 50px;
+    display: block;
+    color: #747474;
+}
+.gn-menu-main a i { color: #747474; }
+.gn-menu-main a:hover i { color: #39F; }
+.gn-menu-main > li > a {
+    padding: 0 10px;
+    font-size: 24px;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+.no-touch .gn-menu-main a:hover,
+.no-touch .gn-menu li.gn-search-item:hover,
+.no-touch .gn-menu li.gn-search-item:hover a {
+    color: #333333;
+}
+a.gn-dropdown {
+    width: 230px;
+    position: relative;
+}
+
+
+/* 4.2 Hidden Menu
+========================================================================== */
+/* 4.2.1 Wrapper
+---------------------------------------------------------------------------*/
+.gn-menu-wrapper {
+    left: 0;
+    bottom: 0;
+    top: 50px;
+    width: 50px;
+    z-index: 7000;
+    position: fixed;
+    overflow: hidden;
+
+    background-repeat: repeat;
+    background-position: center top;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    -webkit-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+       -moz-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+         -o-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+            box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+
+    background-image: none, -webkit-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, -moz-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, -ms-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, -o-linear-gradient(90deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+    background-image: none, linear-gradient(360deg, rgba(255, 255, 255, .8) 0%, #fffffe 100%);
+
+    -webkit-border-top: 1px solid #e4e4e4;
+       -moz-border-top: 1px solid #e4e4e4;
+         -o-border-top: 1px solid #e4e4e4;
+            border-top: 1px solid #e4e4e4;
+
+    -webkit-border-right: 1px solid #e4e4e4;
+       -moz-border-right: 1px solid #e4e4e4;
+         -o-border-right: 1px solid #e4e4e4;
+            border-right: 1px solid #e4e4e4;
+
+    -webkit-transform: translateX(-50px);
+       -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+         -o-transform: translateX(-50px);
+            transform: translateX(-50px);
+
+    -webkit-transition: -webkit-transform 0.3s, width 0.3s;
+       -moz-transition: -moz-transform 0.3s, width 0.3s;
+        -ms-transition: -ms-transform 0.3s, width 0.3s;
+         -o-transition: -o-transform 0.3s, width 0.3s;
+            transition: transform 0.3s, width 0.3s;
+}
+.gn-menu-wrapper.gn-open-all,
+.gn-menu-wrapper.gn-open-part {
+    -webkit-transform: translateX(0px);
+       -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+         -o-transform: translateX(0px);
+            transform: translateX(0px);
+}
+.gn-menu-wrapper.gn-open-all { width: 230px }
+.gn-menu-wrapper.gn-open-all .gn-submenu li { height: 50px }
+.gn-scroller {
+        width: 246px;
+        height: 100%;
+        position: absolute;
+        overflow-y: scroll;
+		overflow-x: hidden;
+
+}
+.gn-menu { text-align: left; }
+
+/* 4.2.2 items
+---------------------------------------------------------------------------*/
+.gn-menu li.gn-search-item  {
+    -webkit-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+       -moz-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+         -o-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+            box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+}
+.gn-menu li a {
+    -webkit-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+       -moz-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+         -o-box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+            box-shadow: 0 1px 0 0 rgba(5, 38, 57, 0.05);
+}
+
+/* 4.2.3 icon
+---------------------------------------------------------------------------*/
+.gn-menu li a i {
+    speak: none;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+}
+.no-touch .gn-icon-menu:hover,
+.no-touch .gn-icon-menu.gn-selected:hover,
+.gn-icon-menu.gn-selected,
+.gn-icon-menu.gn-selected i {
+    color: #39F !important;
+}
+
+
+
+/* 4.2.4 Search
+---------------------------------------------------------------------------*/
+.gn-search-item i {
+    speak: none;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+}
+.gn-search-item form {
+    width: 140px;
+    position: relative;
+    display: inline-block;
+}
+
+input.gn-search {
+    padding: 0;
+	height: 24px;
+    width: 140px;
+    outline: none;
+    color: #747474;
+    cursor: pointer;
+    font-weight: 400;
+	line-height: 24px;
+    position: relative;
+    background: transparent;
+
+    -webkit-border: none;
+       -moz-border: none;
+         -o-border: none;
+            border: none;
+}
+
+.gn-search::-webkit-input-placeholder,
+.gn-search:-moz-placeholder,
+.gn-search::-moz-placeholder,
+.gn-search:-ms-input-placeholder,
+.gn-search:focus::-webkit-input-placeholder,
+.no-touch .gn-menu li.gn-search-item:hover .gn-search:focus::-webkit-input-placeholder,
+.no-touch .gn-menu li.gn-search-item:hover input.gn-search,
+.no-touch .gn-menu li.gn-search-item:hover .gn-search::-webkit-input-placeholder,
+.no-touch .gn-menu li.gn-search-item:hover .gn-search:-moz-placeholder,
+.no-touch .gn-menu li.gn-search-item:hover .gn-search::-moz-placeholder,
+.no-touch .gn-menu li.gn-search-item:hover .gn-search:-ms-input-placeholder {
+        color: #747474;
+}
+
+input.gn-search:focus {
+        cursor: text;
+}
+
+/* 4.2.5 DropDown Menu
+---------------------------------------------------------------------------*/
+.gn-dropdown:after {
+    right: 17px;
+    color: #39F;
+    content: "\f107";
+    position: absolute;
+    font-family: 'FontAwesome';
+}
+
+.gn-dropdown.gn-highlight { color: #333333; }
+.gn-dropdown.gn-highlight i { color: #39F; }
+
+/* 4.2.6 SubMenu
+---------------------------------------------------------------------------*/
+.gn-submenu li {
+    height: 0;
+    overflow: hidden;
+
+    -webkit-transition: height 0.3s;
+       -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+         -o-transition: height 0.3s;
+            transition: height 0.3s;
+}
+.gn-submenu li a {
+    color: #999999;
+    position: relative;
+    padding-left: 30px;
+}
+.gn-submenu li a:after {
+    top: 49px;
+    left: 30px;
+    content: '';
+    height: 1px;
+    width: 200px;
+    position: absolute;
+    background-color: #e4e4e4;
+}
+.gn-submenu li a:hover { padding-left: 40px; }
+
+
+
+/* 4.2.7 logo
+---------------------------------------------------------------------------*/
+.logo{
+	background-color:#39F;
+	}
+
+.logo a {
+    color: #333333;
+    letter-spacing: 1px;
+    font-size: 30px !important;
+    line-height: 50px !important;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+.logo a img {
+    width: 218px;
+    height: 30px;
+    margin-top: -8px;
+}
+
+/* 4.2.8 Active
+---------------------------------------------------------------------------*/
+.gn-active {
+    color: #39F !important;
+    font-size: 18px !important;
+}
+.gn-active i { color: #39F !important; }
+.gn-active:hover { color: #333333 !important; }
+
+
+/* 4.3 Menu Social icons
+---------------------------------------------------------------------------*/
+/* 4.3.1 Wrapper
+---------------------------------------------------------------------------*/
+#menu-social-icons {
+    float: right;
+
+    -webkit-border-right: none;
+       -moz-border-right: none;
+         -o-border-right: none;
+            border-right: none;
+}
+
+/* 4.3.2 list
+---------------------------------------------------------------------------*/
+.menu-social-icons li {
+    float: left;
+    width: 50px;
+    display: inline-block;
+}
+
+/* 4.3.3 Anchor
+---------------------------------------------------------------------------*/
+.menu-social-icons li a {
+    font-size: 20px;
+    line-height: 50px;
+
+    -webkit-box-shadow: inset 1px 0 #e4e4e4;
+       -moz-box-shadow: inset 1px 0 #e4e4e4;
+         -o-box-shadow: inset 1px 0 #e4e4e4;
+            box-shadow: inset 1px 0 #e4e4e4;
+}
+.menu-social-icons li a:hover { color: #39F !important; }
