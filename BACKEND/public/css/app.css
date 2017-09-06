@@ -2270,18 +2270,9 @@ multiple-btnicon span:nth-child(1) {
       padding: 10px 15px; }
     .comment-list .comment-item .panel-heading, .comment-list .comment-item .panel-footer {
       position: relative;
-      font-size: 12px;
-      background-color: #fff; }
+      font-size: 12px; }
   .comment-list .comment-reply {
     margin-left: 46px; }
-  .comment-list:before {
-    position: absolute;
-    top: 0;
-    bottom: 35px;
-    left: 18px;
-    width: 1px;
-    background: #e0e4e8;
-    content: ''; }
 
 /*Timeline*/
 .timeline {

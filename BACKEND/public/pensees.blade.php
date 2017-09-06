@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row row-sm">
-                        <div ng-repeat="pensee in pensees | orderBy:'-updated_at' | filter : {'auteur':TriPenseeByAuteur} track by $index" class="col-xs-6 col-sm-4 col-md-2 pensee pensee_<%pensee.id%> on animated zoomIn">
+                        <div ng-repeat="pensee in pensees | filter : {'auteur': TriElementByAuteur} | orderBy:'-updated_at' track by $index" class="col-xs-6 col-sm-4 col-md-2 pensee pensee_<%pensee.id%> on animated zoomIn">
                             <div class="thumbnail text-center panel" style="box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);">
                                 <img src="<%pensee.image%>" style="width:100%;height: 155px;" class="img-responsive" alt="">
                                 <div class="caption">

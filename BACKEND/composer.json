@@ -49,6 +49,7 @@
             "/opt/lampp/bin/php artisan optimize"
         ],
         "start": "php artisan serve --port 8080 --host 0.0.0.0",
+        "migrate": "php artisan migrate",
         "migrateI": "php artisan migrate:install",
         "migrateR": "php artisan migrate:refresh",
         "migrateRl": "php artisan migrate:rollback",

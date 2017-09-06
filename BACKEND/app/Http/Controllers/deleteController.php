@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Activite;
+use App\Actualite;
 use App\Auteur;
 use App\Evenement;
 use App\Galerie;
@@ -34,6 +36,10 @@ class deleteController extends Controller
             return $this->deleteEvenement();
         else if($class=="Galerie")
             return $this->deleteGalerie();
+        else if($class=="Activite")
+            return $this->deleteActivite();
+        else if($class=="Actualite")
+            return $this->deleteActualite();
     }
 
     function deleteSlider()
@@ -94,5 +100,28 @@ class deleteController extends Controller
         }
         catch (\Exception $e) { }
         return Galerie::destroy(Input::get('id'));
+    }
+
+
+    function deleteActivite()
+    {
+        $activite=Activite::find(Input::get('id'));
+        try
+        {
+            unlink(public_path($activite->fichier));
+        }
+        catch (\Exception $e) { }
+        return Activite::destroy(Input::get('id'));
+    }
+
+    function deleteActualite()
+    {
+        $actualite=Actualite::find(Input::get('id'));
+        try
+        {
+            unlink(public_path($actualite->fichier));
+        }
+        catch (\Exception $e) { }
+        return Actualite::destroy(Input::get('id'));
     }
 }

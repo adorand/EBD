@@ -1,7 +1,6 @@
 
     <section class="hbox stretch panel">
 
-
             <section class="vbox">
                 <header class=" bg-templateblue header panel b-b clearfix on animated fadeInDown" style="border-radius: 0px ;">
                     <div class="row m-t-sm">
@@ -11,14 +10,15 @@
                                 <i class="fa fa-caret-left text-black text-active fa-lg"></i>
                             </a>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm bg-template" ng-click="trierElement('Messages','auteur','',$event)" data-toggle="tooltip" data-placement="bottom" data-title="Actualiser">
+                                <button type="button" class="btn btn-sm bg-template" ng-click="reload()" data-toggle="tooltip" data-placement="bottom" data-title="Actualiser">
                                     <i class="fa fa-refresh text-white"></i>
                                 </button>
                                 <button type="button" class="btn btn-sm bg-white" ng-click="actionGroupee('Remove')" data-toggle="tooltip" data-placement="bottom" data-title="Supprimer"><i class="fa fa-trash-o"></i></button>
+                                <button class="btn btn-sm bg-template" ng-click="showModalAdd('Message')">
+                                    <i class="fa fa-plus text-white"></i>
+                                </button>
                             </div>
-                            <a class="btn btn-sm bg-template" ng-click="showModalAdd('Message')">
-                                <i class="fa fa-plus text-white"></i>
-                            </a>
+
                         </div>
                         <div class="col-sm-4 m-b-xs">
                             <div class="input-group">
@@ -47,8 +47,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="listemessage">
-                                    <tr id="message_<%message.id%>" ng-repeat="message in messages | orderBy:'-updated_at' | filter : {'theme':TriMessageByTheme,'auteur':TriPenseeByAuteur} track by $index" class="on animated fadeInUp message message_<%message.id%>">
-
+                                    <tr id="message_<%message.id%>" ng-repeat="message in messages | filter : {'theme':TriMessageByTheme,'auteur': TriElementByAuteur} | orderBy:'-updated_at' track by $index" class="on animated fadeInUp message message_<%message.id%>">
                                         <td><label class="checkbox m-n i-checks"><input type="checkbox" name="listmessagestoremove[]"><i></i></label></td>
                                         <td class="text-ellipsis"><%message.theme%></td>
                                         <td ng-repeat="auteur in auteurs" ng-if="auteur.id==message.auteur[0].id">

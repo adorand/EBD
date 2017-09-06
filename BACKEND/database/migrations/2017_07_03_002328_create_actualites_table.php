@@ -15,7 +15,6 @@ class CreateActualitesTable extends Migration
             $table->text('texte');
             $table->text('fichier');
             $table->date('dateact');
-            $table->string('categorie');
             $table->timestamps();
             $table->primary('id');
         });

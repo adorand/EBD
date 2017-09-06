@@ -33,11 +33,21 @@ class GaleriesQuery extends Query
         ];
     }
 
-    public function resolve($root, array $args = []):Collection
+    public function resolve($root, array $args = [])
     {
 
         $query=Galerie::with('group');
-        return GalerieSerializers::collection($query->get());
+        return $query->get()->map(function(Galerie $galerie)
+        {
+            return [
+                'id' => $galerie->id,
+                'texte' => $galerie->texte,
+                'fichier' => $galerie->fichier,
+                'evenement' => [ $galerie->hasevenement ],
+                'created_at' => $galerie->created_at,
+                'updated_at' => $galerie->updated_at
+            ];
+        })->toArray();
     }
 
 

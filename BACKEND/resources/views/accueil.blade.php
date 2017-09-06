@@ -40,8 +40,11 @@
                 color:#7b848a;
             }
         </style>
+
+
         <script src="js/angular/angular.min.js"></script>
         <script src="js/angular/angular-route.js"></script>
+        <script src="js/angular/angular-sanitize.js"></script>
 
     </head>
 
@@ -50,9 +53,9 @@
             <header class="panel header header-md navbar navbar-fixed-top-xs box-shadow" style="background: rgba(0, 0, 0, 0.6);">
                 <div class="navbar-header aside">
                     <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-bars text-white"></i>
                     </a>
-                    <a href="#/" class="navbar-brand">
+                    <a href="#/" class="navbar-brand text-white">
                         <img src="images/logo.png" class="m-r-sm" alt="scale">EBD
                     </a>
                     <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
@@ -136,7 +139,7 @@
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
                             </span>
-                            <input type="text" class="form-control input-sm no-border" placeholder="Rechercher pubs...">
+                            <input type="text" class="form-control input-sm no-border" placeholder="Rechercher...">
                         </div>
                     </div>
                 </form>
@@ -191,7 +194,11 @@
                                 <a href="docs.html">Aide</a>
                             </li>
                             <li>
-                                <a href="{{url('deconnexion')}}">Déconnexion</a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Déconnexion</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+
                             </li>
                         </ul>
                     </li>
@@ -254,45 +261,52 @@
                                         <div class=" wrapper">
                                             <ul class="nav nav-pills nav-stacked font-bold" style="cursor: pointer;">
                                                 <li>
-                                                    <a href="#/" ng-class="{active:linknav==='/'}">
+                                                    <a href="#/" ng-class="{active:linknav=='/'}">
                                                         <span class="badge badge-empty pull-right"><%sliders.length%></span>
-                                                        <i class="fa fa-fw fa-star-o"></i> Sliders
+                                                        <i class="fa fa-chevron-right fa-lg text text-info"></i>
+                                                        <i class="fa fa-chevron-right fa-lg color-template text-active"></i> Sliders
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#/pensees" ng-class="{active:linknav=='/pensees'}">
                                                         <span class="badge badge-empty pull-right"><%pensees.length%></span>
-                                                        <i class="fa fa-fw fa-star-o"></i> Pensées
+                                                        <i class="fa fa-pencil fa-lg text text-info"></i>
+                                                        <i class="fa fa-volume-up fa-lg color-template text-active"></i> Pensées
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#/messages" ng-class="{active:linknav=='/messages'}" >
                                                         <span class="badge badge-empty pull-right"><%messages.length%></span>
-                                                        <i class="fa fa-fw fa-star-o"></i> Messages
+                                                        <i class="fa fa-volume-up fa-lg text text-info"></i>
+                                                        <i class="fa fa-volume-up fa-lg color-template text-active"></i> Messages
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#/galerie" ng-class="{active:linknav=='/galerie'}" >
                                                         <span class="badge badge-empty pull-right"><%galeries.length%></span>
-                                                        <i class="fa fa-fw fa-user"></i> Galerie
+                                                        <i class="fa fa-th-large fa-lg text text-info"></i>
+                                                        <i class="fa fa-th-large fa-lg color-template text-active"></i> Galerie
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#/activites" ng-class="{active:linknav=='/activites'}">
                                                         <span class="badge badge-empty pull-right"><%activites.length%></span>
-                                                        <i class="fa fa-fw fa-star-o"></i> Activités
+                                                        <i class="fa fa-tasks fa-lg text text-info"></i>
+                                                        <i class="fa fa-tasks fa-lg color-template text-active"></i> Activités
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#/actualites" ng-class="{active:linknav=='/actualites'}">
+                                                        <span class="badge badge-empty pull-right"><%actualites.length%></span>
+                                                        <i class="fa fa-clock-o fa-lg text text-info"></i>
+                                                        <i class="fa fa-clock-o fa-lg color-template text-active"></i> Actualités
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a ng-click="setContent($event,0,2)" >
                                                         <span class="badge badge-empty pull-right"><%utilisateurs.length%></span>
-                                                        <i class="fa fa-fw fa-users"></i> Actualités
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a ng-click="setContent($event,0,2)" >
-                                                        <span class="badge badge-empty pull-right"><%utilisateurs.length%></span>
-                                                        <i class="fa fa-fw fa-users"></i> Infos Eglises
+                                                        <i class="fa fa-info-circle fa-lg text text-info"></i>
+                                                        <i class="fa fa-info-circle fa-lg color-template text-active"></i> Infos Eglises
                                                     </a>
                                                 </li>
                                                 <li >
@@ -337,18 +351,19 @@
 
                     <section>
                         <section class="hbox stretch">
+
                             <!-- AUTEURS -->
                             <aside class="aside bg-templateblue lt hide" id="viewAuteur">
                                 <section class="vbox animated fadeIn">
                                     <header class="dk header text-center">
                                         <button class="btn bg-white btn-sm btn-transparent-white bg-white-only btn-rounded btn-icon" ng-click="showModalAdd('Auteur')" data-toggle="tooltip" data-placement="bottom" data-title="Ajouter un Auteur"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-sm bg-white btn-rounded btn-icon" ng-click="trierElement('Auteur','')" data-toggle="tooltip" data-placement="bottom" data-title="Actualiser" ><i class="fa fa-refresh"></i></button>
+                                        <button class="btn btn-sm bg-white btn-rounded btn-icon" ng-click="trierElement(linknav,'Auteur','')" data-toggle="tooltip" data-placement="bottom" data-title="Actualiser" ><i class="fa fa-refresh"></i></button>
                                     </header>
                                     <section class="scrollable">
                                         <div class="list-group auto list-group-alt no-radius no-borders" >
                                             <a ng-repeat="auteur in auteurs | orderBy:'-updated_at' | filter:{'nom':TriAuteurByNom} track by $index" style="cursor:pointer;" class="list-group-item text-white on animated zoomIn"  data-toggle="class:bg-templateblue" title="" id="auteur_<%auteur.id%>">
                                                 <i class="fa fa-fw fa-edit text-white text-xs" ng-click="showModalUpdate(auteur,'Auteur',auteur.id)"></i>
-                                                <span ng-click="trierElement('Pensees','auteur',auteur,$event)" ><%auteur.nom | uppercase %></span>
+                                                <span ng-click="trierElement(linknav,auteur,$event)" ><%auteur.nom | uppercase %></span>
                                                 <button style="margin-top: -5px;" class="btn btn-sm bg-template text-white btn-rounded btn-icon pull-right" ng-click="deleteElement(auteur.id,'Auteur',$index)"><i class="fa fa-trash-o"></i></button>
                                             </a>
                                         </div>
@@ -367,84 +382,84 @@
                                 </section>
                             </aside>
 
-                            <aside class="aside-lg panel bg-templateblue hide on animated zoomIn" id="viewAddActivite">
-                                <div class="wrapper">
-                                    <h4 class="m-t-none">Nouvelle Activité</h4>
-                                    <form id="Form_addActivite" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" action="{{url('/addElement/Activite')}}">
+                            {{--<aside class="aside-lg panel bg-templateblue hide on animated zoomIn" id="viewAddActivite">--}}
+                                {{--<div class="wrapper">--}}
+                                    {{--<h4 class="m-t-none">Nouvelle Activité</h4>--}}
+                                    {{--<form id="Form_addActivite" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" action="{{url('/addElement/Activite')}}">--}}
                                         {{--ng-submit="addElement($event,'Activite')"--}}
-                                        <input type="hidden" id="id_activite" name="id_activite" value="">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <div class="form-group">
-                                            <input type="texte" id="titreactivite" name="titre" placeholder="Titre" class="input-sm form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <select id="categorieactivite" name="categorie" class="form-control" required>
-                                                <option value="" >Categorie concernée</option>
-                                                <option ng-repeat="categorie in categories track by $index"  value="<%categorie.nom%>" ><%categorie.nom%></option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="date" id="dateactivite" name="dateact" class="datepicker input-sm form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#texteactiviteconvert">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                                    <ul class="dropdown-menu">
-                                                    </ul>
-                                                    <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
-                                                        <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
-                                                        <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
-                                                    </ul>
-                                                    <a class="btn btn-default btn-sm" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                                        {{--<input type="hidden" id="id_activite" name="id_activite" value="">--}}
+                                        {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<input type="texte" id="titreactivite" name="titre" placeholder="Titre" class="input-sm form-control" required>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<select id="categorieactivite" name="categorie" class="form-control" required>--}}
+                                                {{--<option value="" >Categorie concernée</option>--}}
+                                                {{--<option ng-repeat="categorie in categories track by $index"  value="<%categorie.nom%>" ><%categorie.nom%></option>--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<input type="date" id="dateactivite" name="dateact" class="datepicker input-sm form-control">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#texteactiviteconvert">--}}
+                                                {{--<div class="btn-group">--}}
+                                                    {{--<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>--}}
+                                                    {{--<ul class="dropdown-menu">--}}
+                                                    {{--</ul>--}}
+                                                    {{--<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>--}}
+                                                    {{--<ul class="dropdown-menu">--}}
+                                                        {{--<li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>--}}
+                                                        {{--<li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>--}}
+                                                        {{--<li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>--}}
+                                                    {{--</ul>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>--}}
 
-                                                    <a class="btn btn-default btn-sm" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>--}}
 
-                                                    <a class="btn btn-default btn-sm" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>--}}
 
-                                                    <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-                                                    <div class="dropdown-menu">
-                                                        <div class="input-group m-l-xs m-r-xs">
-                                                            <input class="form-control input-sm" placeholder="URL" type="text" data-edit="createLink"/>
-                                                            <div class="input-group-btn">
-                                                                <button class="btn btn-default btn-sm" type="button">Add</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <a class="btn btn-default btn-sm" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                    {{--<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>--}}
+                                                    {{--<div class="dropdown-menu">--}}
+                                                        {{--<div class="input-group m-l-xs m-r-xs">--}}
+                                                            {{--<input class="form-control input-sm" placeholder="URL" type="text" data-edit="createLink"/>--}}
+                                                            {{--<div class="input-group-btn">--}}
+                                                                {{--<button class="btn btn-default btn-sm" type="button">Add</button>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>--}}
 
-                                                    <a class="btn btn-default btn-sm" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                                    <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                                                    {{--<a class="btn btn-default btn-sm" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>--}}
+                                                    {{--<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />--}}
 
-                                                    <a class="btn btn-default btn-sm" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-                                                    <a class="btn btn-default btn-sm" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-                                                </div>
-                                            </div>
-                                            <div id="texteactiviteconvert" ng-keyup="keyPress($event,'activite')" class="form-control panel-blur" style="overflow:scroll;height:200px;max-height:200px;background: rgb(107, 107, 107);color:#fff;">
-                                                Contenu de l'activité ici
-                                            </div>
-                                            <input type="hidden" id="texteactivite" name="texte" value="Contenu de l'activite ici" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="file" accept="image/*" id="imgactivite" name="fichier" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("activite")' required>
-                                        </div>
-                                        <div class="m-t-lg">
-                                            <button class="btn btn-sm  bg-template pull-right"><i class="fa fa-check"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </aside>
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>--}}
+                                                    {{--<a class="btn btn-default btn-sm" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<div id="texteactiviteconvert" ng-keyup="keyPress($event,'activite')" class="form-control panel-blur" style="overflow:scroll;height:200px;max-height:200px;background: rgb(107, 107, 107);color:#fff;">--}}
+                                                {{--Contenu de l'activité ici--}}
+                                            {{--</div>--}}
+                                            {{--<input type="hidden" id="texteactivite" name="texte" value="Contenu de l'activite ici" required>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<input type="file" accept="image/*" id="imgactivite" name="fichier" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("activite")' required>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="m-t-lg">--}}
+                                            {{--<button class="btn btn-sm  bg-template pull-right"><i class="fa fa-check"></i></button>--}}
+                                        {{--</div>--}}
+                                    {{--</form>--}}
+                                {{--</div>--}}
+                            {{--</aside>--}}
 
                             {{--Contenu de chaque Page est remplacé ici--}}
                             <section id="content" class="panel" style="padding-bottom: 30px;" ng-view>
@@ -457,204 +472,12 @@
         </section>
         <!--  /Contenu -->
 
-        <div class="modal fade" id="Modal_addPublicite" data-keyboard="false" data-backdrop="static">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body wrapper-lg">
-                        <div class="row">
-                            <form id="Form_addPublicite" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8"  ng-submit="addElement($event,'Publicite')">
-                                <input type="hidden" id="id_pub" name="id_pub" value="">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="col-sm-6">
-                                    <h3 class="m-t-none m-b title_modal" >Ajouter un Publicite</h3>
-                                    <div class="form-group">
-                                        <label>Date de création</label>
-                                        <input id="datecreation" name="datecreation" class="form-control" type="date" readonly required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Date de déclenchement</label>
-                                        <input id="datedeclenchement" name="datedeclenchement" class="form-control" type="date" value="" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Date d'expiration</label>
-                                        <input id="dateexpiration" name="dateexpiration" class="form-control" type="date" value="" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Plages Horaires</label>
-                                        <input type="hidden" name="listedroits" id="listedroits" class="form-control" readonly>
-                                        <select id="select2Plage" name="plages[]" class="form-control" multiple="multiple" required>
-                                            <option ng-repeat="plage in plages track by $index" ng-selected="plage.selected" id="plage_<%plage.debut%>-<%plage.fin%>"  ng-value="plage.id" ><%plage.debut%>-<%plage.fin%></option>
-                                        </select>
-                                        <button type="button" class="btn btn-dark btn-rounded btn-icon pull-right" ng-click="showModalAdd('Plage')"><i class="fa fa-plus"></i></button>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Annonceur</label>
-                                        <select id="annpub" name="annonceur" class="form-control" required>
-                                            <option ng-repeat="ann in annonceurs" ng-value="ann.id"><%ann.nom%></option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div id="afffichierpub" style="box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);">
-                                        <img alt="" class="thumbnail" style="width:260px;height:198px;" id="affimgpub" >
-                                    </div>
-                                    <div class="form-group" >
-                                        <input id="imgpub" name="imgpub" type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s" onchange='Chargerphoto("imgpub","affimgpub")' required>
-                                        <input type="hidden" id="typepub" name="typepub">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">Restaurants</label>
-                                        <select id="select2Resto" name="restaurants[]" class="form-control" multiple="multiple" >
-                                            <option ng-repeat="inforestaurant in infosrestaurants track by $index" ng-selected="inforestaurant.selected" id="restopub_<%inforestaurant.restaurant.id%>" ng-value="inforestaurant.restaurant.id" ><%inforestaurant.restaurant.nom%></option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nom</label>
-                                        <input id="nompub" name="nom" class="form-control" type="text" required>
-                                    </div>
-                                    <div class="pull-right" style="margin-top: 25px;">
-                                        <a type="button"  class="btn btn-default closebtn" data-dismiss="modal" ng-click="clearModal()">Annuler</a>
-                                        <button id="save_Publicite" type="submit" class="btn btn-primary" >Ajouter</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-        <div class="modal fade" id="Modal_addRestaurant">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body wrapper-lg">
-                        <div class="row">
-                            <form id="Form_addRestaurant" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Restaurant')">
-                                <input type="hidden" id="id_resto" name="id_resto" value="">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="col-sm-6">
-                                    <h3 class="m-t-none m-b title_modal" >Ajouter un Restaurant</h3>
-                                    <div class="form-group">
-                                        <label>Nom</label>
-                                        <input id="nomresto" name="nom" class="form-control" type="text" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Adresse</label>
-                                        <input id="adrresto" name="adresse" class="form-control" type="text" value="" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Lattitude</label>
-                                        <input id="latresto" name="lattitude" class="form-control" type="number" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nombre de tablette</label>
-                                        <input id="nbretabresto" name="nbretab" class="form-control" type="number" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group" style="margin-top: 42px;">
-                                        <label>Numéro de téléphone</label>
-                                        <input id="phoneresto" name="phone" class="form-control" type="number" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Adrese email</label>
-                                        <input id="adrmailresto" name="email" class="form-control" type="email" value="" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Longitude</label>
-                                        <input id="longresto" name="longitude" class="form-control" type="number" required>
-                                    </div>
-                                    <div class="pull-right" style="margin-top: 25px;">
-                                        <a type="button"  class="btn btn-default" data-dismiss="modal"  >Annuler</a>
-                                        <button id="save_Restaurant" type="submit" class="btn btn-primary" >Ajouter</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-        <div class="modal fade" id="Modal_addTablette">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body wrapper-lg">
-                        <div class="row">
-                            <form id="Form_addTablette" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Tablette')">
-                                <input type="hidden" id="id_tab" name="id_tab" value="">
-                                <input type="hidden" id="id_restotab" name="restaurant" value="">
-                                <div class="col-sm-6">
-                                    <h3 class="m-t-none m-b title_modal" >Ajouter une Tablette</h3>
-                                    <div class="form-group">
-                                        <label>Nom</label>
-                                        <input id="nomtab" name="nom" class="form-control" type="text" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <br>
-                                    <div class="form-group" style="margin-top: 23px;">
-                                        <label>Adresse mac</label>
-                                        <input id="mactab" name="mac" class="form-control" type="text" maxlength="30" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Details</label>
-                                        <textarea id="detailsmac" name="details" class="form-control" style="overflow:scroll;height:150px;max-height:150px" contenteditable="true"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pull-right" style="margin-top: 25px;">
-                                    <a type="button"  class="btn btn-default" data-dismiss="modal"  >Annuler</a>
-                                    <button id="save_Tablette" type="submit" class="btn btn-primary" >Ajouter</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-        <div class="modal fade" id="Modal_addPingsresto">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body wrapper-lg">
-                        <div class="row">
-                            <form id="Form_addPingsresto" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Pingsresto')">
-                                <input type="hidden" id="id_pingsresto" name="id_pingsresto" value="">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="col-sm-6">
-                                    <h3 class="m-t-none m-b title_modal" >Ajouter un Pingsresto</h3>
-                                    <div class="form-group">
-                                        <label>isUpToDate</label>
-                                        <input id="isuptodateping" name="isuptodate" class="form-control" type="text" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Restaurant</label>
-                                        <select id="restoping" name="restaurant" class="form-control" required>
-                                            <option  ng-repeat="inforestaurant in infosrestaurants" value="<%inforestaurant.restaurant.id%>"><%inforestaurant.restaurant.nom%></option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group" style="margin-top: 42px;">
-                                        <label>Liste</label>
-                                        <input id="liste_json_tablettes_ping" name="liste_json_tablettes" class="form-control" type="text" required>
-                                    </div>
-                                    <div class="pull-right" style="margin-top: 25px;">
-                                        <a type="button"  class="btn btn-default" data-dismiss="modal"  >Annuler</a>
-                                        <button id="save_Pingsresto" type="submit" class="btn btn-primary" >Ajouter</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <div class="modal fade" id="Modal_addUtilisateur">
@@ -713,7 +536,7 @@
             <div class="modal-dialog modal-compose">
                 <div class="modal-content">
                     <div class="compose-header">
-                        <span> Nouveau Slider </span>
+                        <strong class="text-u-c"> Nouveau Slider </strong>
                         <span class="header-controls">
                             <i class="fa fa-times-circle" data-dismiss="modal"></i>
                         </span>
@@ -721,9 +544,9 @@
                     <div class="modal-body wrapper-lg">
                         <div class="row">
                             <form id="Form_addSlider" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Slider')">
+                                {{ csrf_field() }}
                                 <div class="col-sm-6">
                                     <input type="hidden" id="id_slider" name="id_slider" value="">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group">
                                         <label>Nom de la page</label>
                                         <input type="text" id="nompage" name="nompage" class="form-control" placeholder="" required>
@@ -757,7 +580,7 @@
             <div class="modal-dialog modal-compose">
                 <div class="modal-content">
                     <div class="compose-header">
-                        <span> Nouvel auteur </span>
+                        <strong class="text-u-c"> Nouvel auteur</strong>
                         <span class="header-controls">
                             <i class="fa fa-times-circle" data-dismiss="modal"></i>
                         </span>
@@ -794,7 +617,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="compose-header">
-                        <span> Nouvelle Pensée </span>
+                        <strong class="text-u-c"> Nouvelle Pensée </strong>
                         <span class="header-controls">
                             <i class="fa fa-times-circle" data-dismiss="modal"></i>
                         </span>
@@ -811,7 +634,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Image de la pensée</label>
-                                        <input type="file" id="imgpensee" name="img" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("pensee")' required>
+                                        <input type="file" accept="image/*" id="imgpensee" name="img" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("pensee")' required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -904,14 +727,14 @@
             <div class="modal-dialog modal-compose">
                 <div class="modal-content">
                     <div class="compose-header">
-                        <span>Nouveau Message</span>
+                        <strong class="text-u-c">Nouveau Message</strong>
                         <span class="header-controls">
                             <i class="fa fa-times-circle" data-dismiss="modal"></i>
                         </span>
                     </div>
                     <div class="modal-body wrapper-lg">
                         <div class="row">
-                            <form id="Form_addMessage" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" action="{{url('/addElement/Message')}}">
+                            <form id="Form_addMessage" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Message')">
                                 <div class="col-sm-12">
                                     <input type="hidden" id="id_message" name="id_message" value="">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -954,7 +777,7 @@
             <div class="modal-dialog modal-compose">
                 <div class="modal-content">
                     <div class="compose-header">
-                        <span> Nouvel element </span>
+                        <strong class="text-u-c"> Nouvel element </strong>
                         <span class="header-controls">
                             <i class="fa fa-times-circle" data-dismiss="modal"></i>
                         </span>
@@ -1047,7 +870,7 @@
             <div class="modal-dialog modal-compose">
                 <div class="modal-content">
                     <div class="compose-header">
-                        <span> Nouvel élément dans la Galerie </span>
+                        <strong class="text-u-c"> Nouvel élément dans la Galerie </strong>
                         <span class="header-controls">
                             <i class="fa fa-times-circle" data-dismiss="modal"></i>
                         </span>
@@ -1083,6 +906,208 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {{--Modal Activité--}}
+        <div class="modal fade" id="Modal_addActivite">
+            <div class="modal-dialog modal-compose scrollable">
+                <div class="modal-content">
+                    <div class="modal-body ">
+                        <div class="row color-template">
+                            <div class="col-sm-12 bg-info" style="margin: -15px 0px -15px 0px;">
+                                <form class="m-t" id="Form_addActivite" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Activite')">
+                                    <input type="hidden" id="id_activite" name="id_activite" value="">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="input-group m-b">
+                                                <span class="input-group-btn" >
+                                                    <button class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-user"></i></button>
+                                                </span>
+                                                <input type="texte" id="titreactivite" name="titre" placeholder="Titre" class="input-sm form-control no-borders" required>
+                                            </div>
+                                            <div class="input-group m-b">
+                                                <input type="date" id="dateactivite" name="dateact" class="input-sm form-control no-borders" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group m-b bg-white">
+                                                    <select  id="categorieactivite" name="categorie" class="form-control" class="no-borders" required>
+                                                        <option value="" >Categorie</option>
+                                                        <option ng-repeat="categorie in categories track by $index"  value="<%categorie.nom%>" ><%categorie.nom%></option>
+                                                    </select>
+                                                    <span class="input-group-btn border-radius">
+                                                        <button style="" type="button" class="btn btn-sm bg-white b-white btn-icon">
+                                                            <i class="fa fa-th-large"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <div class="input-group m-b">
+                                                    <input type="file" accept="image/*" id="imgactivite" name="fichier" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("activite")' required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#texteactiviteconvert">
+                                            <div class="btn-group">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                                <ul class="dropdown-menu">
+                                                </ul>
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                                                    <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                                                    <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                                                </ul>
+                                                <a class="btn btn-default btn-sm" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+
+                                                <a class="btn btn-default btn-sm" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+
+                                                <a class="btn btn-default btn-sm" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                                                <div class="dropdown-menu">
+                                                    <div class="input-group m-l-xs m-r-xs">
+                                                        <input class="form-control input-sm" placeholder="URL" type="text" data-edit="createLink"/>
+                                                        <div class="input-group-btn">
+                                                            <button class="btn btn-default btn-sm" type="button">Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-default btn-sm" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+
+                                                <a class="btn btn-default btn-sm" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+
+                                                <a class="btn btn-default btn-sm" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                        <div id="texteactiviteconvert" ng-keyup="keyPress($event,'activite')" class="form-control panel-blur" style="overflow:scroll;height:150px;max-height:200px;background: rgb(107, 107, 107);color:#fff;">
+                                            Contenu de l'activité ici
+                                        </div>
+                                        <input type="hidden" id="texteactivite" name="texte" value="Contenu de l'activite ici" required>
+                                    </div>
+                                    <button id="save_Activite" type="submit" class="btn btn-md bg-template btn-with-icon m-b pull-right">
+                                        <i class="fa fa-check text-white"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        {{--Modal Actualite--}}
+        <div class="modal fade" id="Modal_addActualite">
+            <div class="modal-dialog modal-compose scrollable">
+                <div class="modal-content">
+                    <div class="modal-body ">
+                        <div class="row color-template">
+                            <div class="col-sm-12 bg-info" style="margin: -15px 0px -15px 0px;">
+                                <form class="m-t" id="Form_addActualite" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" ng-submit="addElement($event,'Actualite')">
+                                    <input type="hidden" id="id_actualite" name="id_actualite" value="">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="input-group m-b">
+                                                <span class="input-group-btn" >
+                                                    <button class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-user"></i></button>
+                                                </span>
+                                                <input type="texte" id="titreactualite" name="titre" placeholder="Titre" class="input-sm form-control no-borders" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group m-b">
+                                                    <input type="date" id="dateactualite" name="dateact" class="input-sm form-control no-borders" required>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-group m-b">
+                                                    <input type="file" accept="image/*" id="imgactualite" name="fichier" class="filestyle pull-right" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-modal" onchange='Chargerphoto("actualite")' required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#texteactualiteconvert">
+                                            <div class="btn-group">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                                <ul class="dropdown-menu">
+                                                </ul>
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                                                    <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                                                    <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                                                </ul>
+                                                <a class="btn btn-default btn-sm" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+
+                                                <a class="btn btn-default btn-sm" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+
+                                                <a class="btn btn-default btn-sm" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                                                <div class="dropdown-menu">
+                                                    <div class="input-group m-l-xs m-r-xs">
+                                                        <input class="form-control input-sm" placeholder="URL" type="text" data-edit="createLink"/>
+                                                        <div class="input-group-btn">
+                                                            <button class="btn btn-default btn-sm" type="button">Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-default btn-sm" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+
+                                                <a class="btn btn-default btn-sm" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+
+                                                <a class="btn btn-default btn-sm" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                                                <a class="btn btn-default btn-sm" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                        <div id="texteactualiteconvert" ng-keyup="keyPress($event,'actualite')" class="form-control panel-blur" style="overflow:scroll;height:150px;max-height:200px;background: rgb(107, 107, 107);color:#fff;">
+                                            Contenu de l'actualité ici
+                                        </div>
+                                        <input type="hidden" id="texteactualite" name="texte" value="Contenu de l'actualite ici" required>
+                                    </div>
+                                    <button id="save_Actualite" type="submit" class="btn btn-md bg-template btn-with-icon m-b pull-right">
+                                        <i class="fa fa-check text-white"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
 

@@ -51,6 +51,10 @@ class ActivitesQuery extends Query
         {
             return Activite::where('dateact', $args['dateact'])->get();
         }
+        else if(isset($args['categorie']))
+        {
+            return Activite::where('categorie', $args['categorie'])->get();
+        }
         else
         {
             return Activite::get();

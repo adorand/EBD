@@ -294,7 +294,7 @@
 		{
 			position: relative;
 			font-size: 12px;
-			background-color: #fff;
+			//background-color: #fff;
 		}
 	}
 
@@ -305,13 +305,13 @@
 
 	&:before
 	{
-		position: absolute;
-		top: 0;
-		bottom: 35px;
-		left: 18px;
-		width: 1px;
-		background: #e0e4e8;
-		content: '';
+		//position: absolute;
+		//top: 0;
+		//bottom: 35px;
+		//left: 18px;
+		//width: 1px;
+		//background: #e0e4e8;
+		//content: '';
 	}
 }
 

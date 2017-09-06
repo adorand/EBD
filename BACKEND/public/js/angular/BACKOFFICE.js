@@ -3,9 +3,9 @@
 
 
 
-var pathapp= 'http://localhost:8080/';
+var pathapp='http://'+location.host+'/';
 
-var app=angular.module('BackEnd',["ngRoute"]);
+var app=angular.module('BackEnd',[ 'ngRoute' , 'ngSanitize' ]);
 
 app.factory('Init',function ($http, $q)
 {
@@ -107,7 +107,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             {"Evenements": "id,titre,description,created_at,updated_at"},
             {"Galeries": "id,texte, fichier, created_at, updated_at, evenement{id,titre,description}"},
             {"Activites": "id,titre,texte,fichier,dateact, categorie,created_at, updated_at"},
-            {"Actualites": "id,titre,texte,fichier,dateact, categorie,created_at, updated_at"},
+            {"Actualites": "id,titre,texte,fichier,dateact,created_at, updated_at"},
         ];
 
 
@@ -120,7 +120,6 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
     $scope.categories=[ {'nom':'Hommes', 'icon' : 'fa-male'} , {'nom':'Femmes', 'icon' : 'fa-female'}, {'nom':'Jeunes', 'icon' : 'fa-check'} , {'nom':'Enfants', 'icon' : 'fa-child'} ]
     $scope.$on('$routeChangeStart', function(next, current)
     {
-        $('#viewAddActivite').attr('Class').match("show") ?  $scope.showView('AddActivite') : "";
         $scope.linknav=$location.path();
         $.each(listofrequests[4],function (element, listeattributs)
         {
@@ -133,7 +132,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             });
         });
 
-        if(current.templateUrl.toLocaleLowerCase().indexOf('accueil')!=-1)
+        if(angular.lowercase(current.templateUrl).indexOf('accueil')!=-1)
         {
             $.each(listofrequests[0],function (element, listeattributs)
             {
@@ -147,7 +146,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             });
 
         }
-        else if(current.templateUrl.toLocaleLowerCase().indexOf('pensees')!=-1)
+        else if(angular.lowercase(current.templateUrl).indexOf('pensees')!=-1)
         {
             $.each(listofrequests[2],function (element, listeattributs)
             {
@@ -161,7 +160,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             });
 
         }
-        else if(current.templateUrl.toLocaleLowerCase().indexOf('messages')!=-1)
+        else if(angular.lowercase(current.templateUrl).indexOf('messages')!=-1)
         {
 
             $.each(listofrequests[3],function (element, listeattributs)
@@ -176,7 +175,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             });
 
         }
-        else if(current.templateUrl.toLocaleLowerCase().indexOf('galerie')!=-1)
+        else if(angular.lowercase(current.templateUrl).indexOf('galerie')!=-1)
         {
 
             $.each(listofrequests[5],function (element, listeattributs)
@@ -202,8 +201,34 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             });
 
         }
+        else if( angular.lowercase(current.templateUrl).indexOf('activites')!=-1)
+        {
+            $.each(listofrequests[7],function (element, listeattributs)
+            {
+                Init.getElement(element, listeattributs).then(function (data)
+                {
+                    $scope.activites=data['data'][element];
+                }, function (msg)
+                {
+                    alert(msg);
+                });
+            });
+        }
+        else if( angular.lowercase(current.templateUrl).indexOf('actualites')!=-1)
+        {
+            $.each(listofrequests[8],function (element, listeattributs)
+            {
+                Init.getElement(element, listeattributs).then(function (data)
+                {
+                    $scope.actualites=data['data'][element];
+                }, function (msg)
+                {
+                    alert(msg);
+                });
+            });
+        }
 
-        if( current.templateUrl.toLocaleLowerCase().indexOf('pensees')!=-1 || current.templateUrl.toLocaleLowerCase().indexOf('messages')!=-1)
+        if( angular.lowercase(current.templateUrl).indexOf('pensees')!=-1 || angular.lowercase(current.templateUrl).indexOf('messages')!=-1)
         {
             $.each(listofrequests[1],function (element, listeattributs)
             {
@@ -217,20 +242,7 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             });
         }
 
-        if( current.templateUrl.toLocaleLowerCase().indexOf('activites')!=-1)
-        {
-            $scope.showView('AddActivite');
-            $.each(listofrequests[7],function (element, listeattributs)
-            {
-                Init.getElement(element, listeattributs).then(function (data)
-                {
-                    $scope.activites=data['data'][element];
-                }, function (msg)
-                {
-                    alert(msg);
-                });
-            });
-        }
+
 
 
     });
@@ -267,7 +279,6 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
         });
     },(1000));*/
 
-    $scope.pgcontent=0;
     $scope.showView=function (view)
     {
         $('#view'+view).attr('Class').match("show") ?
@@ -275,34 +286,19 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             : ($('#view'+view).addClass('show'), $('#view'+view).removeClass('hide') ) ;
     };
 
-    /*$scope.setContent=function(event,pg,inner=-1)
-    {
-        $(event.target).parent().parent().children().children().removeClass('bg-templateblue');
-        $(event.target).addClass('bg-templateblue');
-        (inner==-1) ? ( $('#viewAnnonceur').attr('class','aside bg-template lt hide'), $('#viewUtilisateur').attr('class','aside-md bg-black lt hide') )
-        : (inner==1)
-            ? ( $('#viewAnnonceur').attr('Class').match("show") ?  $('#viewAnnonceur').attr('class','aside bg-template lt hide')
-                : $('#viewAnnonceur').attr('class','aside bg-template lt show'), $('#viewUtilisateur').attr('class','aside-md bg-black lt hide') )
-            : ( $('#viewAnnonceur').attr('class','aside bg-template lt hide'),
-                $('#viewUtilisateur').attr('Class').match("show") ? $('#viewUtilisateur').attr('class','aside-md bg-black lt hide')
-                    : $('#viewUtilisateur').attr('class','aside-md bg-black lt show') ) ;
-        $scope.pgcontent=pg;
-    };*/
 
+    /*RELOAD ELEMENT OF PAGE*/
+    $scope.reload=function () { $route.reload();};
 
     $scope.actionGroupee=function(action)
     {
         $('.message').each(function (index)
         {
             var prefix=$( this ).attr('class').match( /message_.*/i )[0];
-
-            // alert(prefix);
             if($("."+prefix+ " > td > label > input").prop('checked'))
             {
                 console.log(prefix.split('_')[1]);
                 $scope.deleteElement(prefix.split('_')[1],'Message',index);
-                // console.log($('.'+prefix).remove());
-                // $('#'+prefix).remove();
             }
         });
         setTimeout(function () { $route.reload(); }, 100);
@@ -377,6 +373,29 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             $("#texte"+type.toLowerCase()).val(""),
             $("#fichier"+type.toLowerCase()).attr('required',true),
             $("#fichier"+type.toLowerCase()).val(""),
+            $('.input-modal').val("")
+        )
+        :(type.match("Activite")) ?
+        (
+            $("#id_"+type.toLowerCase()).val(""),
+            $("#titre"+type.toLowerCase()).val(""),
+            $("#date"+type.toLowerCase()).val(""),
+            $("#categorie"+type.toLowerCase()).val(""),
+            $("#img"+type.toLowerCase()).attr('required',true),
+            $("#img"+type.toLowerCase()).val(""),
+            $("#texte"+type.toLowerCase()+"convert").html("Contenu de l'"+type.toLowerCase()+" ici"),
+            $("#texte"+type.toLowerCase()).val("Contenu de l'"+type.toLowerCase()+" ici"),
+            $('.input-modal').val("")
+        )
+        :(type.match("Actualite")) ?
+        (
+            $("#id_"+type.toLowerCase()).val(""),
+            $("#titre"+type.toLowerCase()).val(""),
+            $("#date"+type.toLowerCase()).val(""),
+            $("#img"+type.toLowerCase()).attr('required',true),
+            $("#img"+type.toLowerCase()).val(""),
+            $("#texte"+type.toLowerCase()+"convert").html("Contenu de l'"+type.toLowerCase()+" ici"),
+            $("#texte"+type.toLowerCase()).val("Contenu de l'"+type.toLowerCase()+" ici"),
             $('.input-modal').val("")
         )
         :(type.match("Plage")) ?
@@ -513,6 +532,27 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
             $("#img"+type.toLowerCase()).attr('required',false),
             $("#img"+type.toLowerCase()).val(""),
             $("#evenement"+type.toLowerCase()).val(element.evenement[0].id)
+        )
+        :(type.match("Activite")) ?
+        (
+            emptyform("Activite"),
+            $("#img"+type.toLowerCase()).attr('required',false),
+            $("#id_"+type.toLowerCase()).val(element.id),
+            $("#titre"+type.toLowerCase()).val(element.titre),
+            $("#date"+type.toLowerCase()).val(element.dateact),
+            $("#categorie"+type.toLowerCase()).val(element.categorie),
+            $("#texte"+type.toLowerCase()+"convert").html(element.texte),
+            $("#texte"+type.toLowerCase()).val(element.texte)
+        )
+        :(type.match("Actualite")) ?
+        (
+            emptyform("Actualite"),
+            $("#img"+type.toLowerCase()).attr('required',false),
+            $("#id_"+type.toLowerCase()).val(element.id),
+            $("#titre"+type.toLowerCase()).val(element.titre),
+            $("#date"+type.toLowerCase()).val(element.dateact),
+            $("#texte"+type.toLowerCase()+"convert").html(element.texte),
+            $("#texte"+type.toLowerCase()).val(element.texte)
         )
         :(type.match("Plage")) ?
         (
@@ -708,10 +748,29 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
                                     $.each($scope.galeries,function (key,value)
                                     {
                                         if(value.id==obj.id)
+                                        {
                                             $scope.galeries[key]=obj;
+                                            $('#galeriemp_'+value.id)[0].load();
+                                        }
                                     })
                                 )
                                 :$scope.galeries.push(obj)
+                        )
+                        :(type.match('Activite')) ?
+                        (
+                            ($("#save_"+type).html().match('edit')) ?
+                            (
+                                $route.reload()
+                            )
+                            :$scope.activites.push(obj)
+                        )
+                        :(type.match('Actualite')) ?
+                        (
+                            ($("#save_"+type).html().match('edit')) ?
+                            (
+                                $route.reload()
+                            )
+                            :$scope.actualites.push(obj)
                         ): '';
 
 
@@ -723,35 +782,29 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
                     },
                     error:function (error)
                     {
-                        toastr.error(error);
-                        var msg="";
-                        // (type.match('Plage')) ? msg="Cette plage est déjà comprise dans une autre ou elle existe déjà"
-                        // :(type.match('Publicite')) ? msg="Réessayer encore ou contacter l'administrateur"
-                        // : (type.match('Tablette')) ? msg="Le nom et l'adresse mac de la tablette doivent être en couple unique"
-                        // : msg="Vérifier les paramètres saisis:: l'email saisi existe déjà";
-                        // alert(msg);
-
+                        toastr.error(error['responseText']);
+                        toastr.error("Si vous ne comprenez pas l'erreur, contactez l'administrateur");
                     }
                 }
             ):' ';
 
     };
 
-    $scope.trierElement=function (type,by,value='',event=0)
+
+    $scope.trierElement=function (type,value='',event=0)
     {
-        (type.match('Pensees')) ?
+        ($scope.linknav.match(angular.lowercase(type)) && ( $scope.linknav.indexOf('pensees')!==-1 || $scope.linknav.indexOf('messages')!==-1) ) ?
         (
-            $scope.TriPenseeByAuteur=value.id,
-                (!value) ? $scope.TriPenseeByAuteur="" : ''
+            $scope.TriElementByAuteur=value.id,
+                (!value) ? $scope.TriElementByAuteur="" : ''
         )
-        :(type.match('Messages')) ?
+        :($scope.linknav.indexOf('galerie')!==-1) ?
         (
-            $scope.TriPenseeByAuteur=value
+            value ? $scope.TriElementByForeignKey=JSON.parse(value).id : $scope.TriElementByForeignKey=''
         )
-        :(type.match('Annonceur')) ?
+        :($scope.linknav.indexOf('activite')!==-1) ?
         (
-            $scope.triAnn.type=value,
-            (!value) ? $scope.triAnn.nom="" : ''
+            value ? $scope.TriElementByForeignKey=JSON.parse(value).nom : $scope.TriElementByForeignKey=''
         )
         : (type.match('Plage')) ?
         (
@@ -855,7 +908,6 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
     //Delete element in scope
     $scope.deleteElement=function (id,type,position="")
     {
-        alert(type);
         id=type.match('Evenement') ? JSON.parse(id).id : id;
         var msg='Confirmer cette suppression ???';
 
@@ -956,6 +1008,10 @@ app.controller('backgroundController',function ($location,$scope,$q,$route,Init)
                         )
                         : (type.match('Galerie')) ?
                             $scope.galeries.splice(position,1)
+                        : (type.match('Activite')) ?
+                            $scope.activites.splice(position,1)
+                        : (type.match('Actualite')) ?
+                            $scope.actualites.splice(position,1)
                         : (type.match('Tablette')) ?
                         (
                             $.each($scope.infosrestaurants,function(key,value)

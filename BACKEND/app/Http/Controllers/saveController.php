@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Activite;
+use App\Actualite;
 use App\Auteur;
 use App\Evenement;
 use App\Galerie;
@@ -154,11 +155,7 @@ class saveController extends Controller
             $fichier_tmp=$_FILES['fichier']['tmp_name'];
             $ext=explode('.',$fichier);
             $rename=config('view.uploads')[4]."/".$message->id.".".end($ext);
-            if(move_uploaded_file($fichier_tmp,$rename))
-                echo "bon";
-            else
-                echo "mabé";
-
+            move_uploaded_file($fichier_tmp,$rename);
             $message->fichier=$rename;
         }
         $message->save();
@@ -238,5 +235,33 @@ class saveController extends Controller
         }
         $activite->save();
         return json_encode(Activite::find($activite->id));
+    }
+
+    function saveActualite()
+    {
+        $actualite=new Actualite();
+        empty(Input::get('id_actualite')) ?  $actualite->id=Uuid::generate() : $actualite=Actualite::find(Input::get('id_actualite')) ;
+        $actualite->titre = Input::get('titre');
+        $actualite->texte = Input::get('texte');
+        $actualite->dateact = Input::get('dateact');
+        $fichier=$_FILES['fichier']['name'];
+        if(!empty($fichier))
+        {
+            try
+            {
+                if(!empty(Input::get('id_actualite')))
+                {
+                    unlink(public_path($actualite->fichier));
+                }
+            }
+            catch (\Exception $e) { }
+            $fichier_tmp=$_FILES['fichier']['tmp_name'];
+            $ext=explode('.',$fichier);
+            $rename=config('view.uploads')[7]."/".$actualite->id.".".end($ext);
+            move_uploaded_file($fichier_tmp,$rename);
+            $actualite->fichier=$rename;
+        }
+        $actualite->save();
+        return json_encode(Actualite::find($actualite->id));
     }
 }

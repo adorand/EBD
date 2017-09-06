@@ -21,7 +21,6 @@ class ActualiteType extends GraphQLType
             'texte'          => ['type' => Type::string(), 'description' => 'texte de l\'actualite ',],
             'fichier'        => ['type' => Type::string(), 'description' => 'fichier de l\'actualite ',],
             'dateact'        => ['type' => Type::string(), 'description' => 'date de l\'actualite ',],
-            'categorie'        => ['type' => Type::string(), 'description' => 'Categorie de l\'actualite ',],
             'created_at'     => ['type' => Type::string(), 'description' => 'Date d\'ajout de l\'actualite' ],
             'updated_at'     => ['type' => Type::string(), 'description' => 'Dernière modification de l\'actualite' ],
         ];

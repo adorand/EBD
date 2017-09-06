@@ -26,7 +26,6 @@ class ActualitesQuery extends Query
             'texte'       => ['name' => 'texte', 'type' => Type::string()],
             'fichier'     => ['name' => 'fichier', 'type' => Type::string()],
             'dateact'     => ['name' => 'dateact', 'type' => Type::string()],
-            'categorie'   => ['name' => 'categorie', 'type' => Type::string()],
             'created_at'  => ['name' => 'created_at', 'type' => Type::string()],
             'updated_at'  => ['name' => 'updated_at', 'type' => Type::string()]
         ];

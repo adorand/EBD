@@ -32,10 +32,14 @@ $(function(){
 		$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
 		 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
 	};
-  initToolbarBootstrapBindings();  
+
+    initToolbarBootstrapBindings();
 	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
 	$('#textepenseeconvert').wysiwyg({ fileUploadError: showErrorAlert} );
 	$('#texteevenementconvert').wysiwyg({ fileUploadError: showErrorAlert} );
     $('#texteactiviteconvert').wysiwyg({ fileUploadError: showErrorAlert} );
     $('#texteactualiteconvert').wysiwyg({ fileUploadError: showErrorAlert} );
+
+    /*A ne pas supprimer, il intervient pour la gestion des erreurs dû à l'insertion du plugin*/
+    $('#texte').wysiwyg({ fileUploadError: showErrorAlert} );
 });

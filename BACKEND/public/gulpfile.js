@@ -13,13 +13,16 @@ gulp.task('sass', function() {
 
 gulp.task('serve', function() {
     sync.init({
-        proxy: "http://localhost/EBD/BACKOFFICE/public"
+        proxy: "http://localhost:8080/",
+        port: 8080
     });
+
     gulp.watch("*.php").on('change', sync.reload);
     gulp.watch("../resources/views/*.php").on('change', sync.reload);
+    gulp.watch("../resources/views/**/*.php").on('change', sync.reload);
     gulp.watch("css/*.css").on('change', sync.reload);
     gulp.watch("js/*.js").on('change', sync.reload);
-    gulp.watch("js/angular/*.js").on('change', sync.reload);
+    gulp.watch("js/**/*.js").on('change', sync.reload);
     gulp.watch("css/sass/*.scss", ['sass']);
 
 });

@@ -24,9 +24,12 @@
     "lint": "tslint ./public/angular2/src/**/*.ts -t verbose"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "laravel-elixir": "^5.0.0",
+    "laravel-elixir-browsersync": "^0.1.5",
+    "laravel-elixir-browsersync-official": "^1.0.0",
+    "laravel-elixir-livereload": "^1.1.6"
   },
-  "dependencies": {
-    "angular-ui-router": "^1.0.3"
-  }
+  "dependencies": {}
 }
